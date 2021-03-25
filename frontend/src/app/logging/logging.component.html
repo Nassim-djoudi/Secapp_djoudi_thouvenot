@@ -1,0 +1,77 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
+<h2> Editer un sondage </h2>
+
+<form>
+
+    <div id="form" class="form-group row">
+        <label for="id" class="col-sm-2 col-form-label">
+            Id sondage
+        </label>
+        <input type="text" class="form-control col "[(ngModel)]="id" name="a">
+    </div>
+
+    <div id="form" class="form-group row">
+        <label for="password" class="col-sm-2 col-form-label">
+            Mot de passe 
+        </label>
+        <input type="text" class="form-control col" [(ngModel)]="password_log" name="b">
+    </div>
+
+    <div>
+        <mat-slide-toggle [(ngModel)]="secure" class="switch" name="z" (change)="update()" > Protection injection SQL : {{secure_status}} </mat-slide-toggle>
+    </div>
+
+    <div class="ButtonAdd">
+        <button class="btn btn-primary" style="background: #fa6484; border:none; padding:10px;width: 120px" (click)="goToForm()"> Rechercher</button>
+    </div>
+
+    <div id="form" class="form-group row">
+        <label for="titre">
+            Titre : 
+        </label>
+        <input type="text" [(ngModel)]="titre" name="c" readonly>
+    </div>
+
+    <div id="form" class="form-group row">
+        <label for="lieu">
+            Lieu : 
+        </label>
+        <input type="text" [(ngModel)]="lieu" name="d" readonly>
+    </div>
+
+    <div id="form" class="form-group row">
+        <label for="Nom Organisateur">
+            Nom de l'organisateur : 
+        </label>
+        <input type="text" [(ngModel)]="nom" name="e" readonly>
+    </div>
+
+    <div id="form" class="form-group row">
+        <label for="Prenom Organisateur">
+            Prénom de l'organisateur : 
+        </label>
+        <input type="text" [(ngModel)]="prenom" name="f" readonly>
+    </div>
+    
+    <div id="form" class="form-group row">
+        <label for="Email Organisateur">
+            Email de l'organisateur : 
+        </label>
+        <input type="text" [(ngModel)]="email" name="g" readonly>
+    </div>
+
+    <div>
+        <li *ngFor="let user of form.participants">
+            <span class="user">{{user.email}}</span> {{user.nom}}
+        </li>
+    </div>
+
+    <div>
+        <li *ngFor="let choice of form.choixPossible">
+            <span class="user">{{choice.debut}}</span> {{choice.fin}}
+        </li>
+    </div>
+
+</form>

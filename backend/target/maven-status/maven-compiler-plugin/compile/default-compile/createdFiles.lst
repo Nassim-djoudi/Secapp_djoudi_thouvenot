@@ -1,0 +1,11 @@
+fr\istic\taa\jaxrs\dao\generic\EntityManagerHelper.class
+fr\istic\taa\jaxrs\domain\Pet.class
+domain\Poll.class
+fr\istic\taa\jaxrs\dao\generic\AbstractJpaDao.class
+domain\Choise.class
+domain\User.class
+fr\istic\taa\jaxrs\dao\generic\IGenericDao.class
+fr\istic\taa\jaxrs\rest\Hello.class
+fr\istic\taa\jaxrs\TestApplication.class
+fr\istic\taa\jaxrs\rest\PetResource.class
+fr\istic\taa\jaxrs\RestServer.class

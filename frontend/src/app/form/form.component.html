@@ -1,0 +1,57 @@
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<h2>Ajouter un sondage</h2>
+
+<form>
+
+    <div id="form" class="form-group ">
+        <label for="titre">
+            Titre : 
+        </label>
+        <input class="form-control" type="text" placeholder="Titre" [(ngModel)]="titre" name="a">
+    </div>
+
+    <div id="form" class="form-group">
+        <label for="lieu">
+            Lieu : 
+        </label>
+        <input class="form-control" placeholder="Lieu" type="text" [(ngModel)]="lieu" name="b">
+    </div>
+    <div id="form">
+        <label for="Nom Organisateur">
+            Nom organisateur : 
+        </label>
+        <input type="text" class="form-control" placeholder="Nom" [(ngModel)]="nom" name="c">
+    </div>
+
+    <div id="form">
+        <label for="Prenom Organisateur">
+            Prénom organisateur : 
+        </label>
+        <input type="text" class="form-control" placeholder="Prénom" [(ngModel)]="prenom" name="d">
+    </div>
+    
+    <div id="form">
+        <label for="Email Organisateur">
+            Email organisateur : 
+        </label>
+        <input type="text" class="form-control" placeholder="Email" [(ngModel)]="email" name="e">
+        <small id="emailHelp" class="form-text text-muted">Nous ne partagerons jamais votre mail</small>
+    </div>
+
+    <div id="form">
+        <label for="Mot de passe">
+            Mot de passe :
+        </label>
+        <input type="text" class="form-control" placeholder="Password" [(ngModel)]="password" name="f">
+    </div>
+    
+    <div class="ButtonAdd">
+        <button class="btn btn-primary" style="background: #fa6484; border:none" (click)="saveForm()">Ajouter l'événement</button>
+    </div>
+</form>
+
+<div>
+    <button hidden (click)="getUrl()"> test</button>
+</div>

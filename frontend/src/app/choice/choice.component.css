@@ -1,0 +1,21 @@
+form {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    margin:auto;
+  }
+h2{
+	text-align: center;
+	font-size:40px;
+	margin-top:30px;
+	font-family:"Poppins";
+}
+.ButtonAdd{
+	align-items: center;
+	margin:auto;
+	margin-top: 30px;
+	justify-content: center;
+}
+#form{
+	margin-top: 1%
+}
