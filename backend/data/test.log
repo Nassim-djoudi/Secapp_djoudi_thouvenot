@@ -1,0 +1,18 @@
+/*C1*/SET SCHEMA SYSTEM_LOBS
+INSERT INTO BLOCKS VALUES(0,2147483647,0)
+COMMIT
+/*C3*/SET SCHEMA PUBLIC
+create table Choice (id bigint not null, debut varchar(255), fin varchar(255), form_id bigint, primary key (id))
+create table Forms (id bigint not null, lieu varchar(255), password varchar(255), titre varchar(255), choixSelectionne_id bigint, organisateur_email varchar(255), primary key (id))
+create table Forms_Users (Form_id bigint not null, participants_email varchar(255) not null)
+create table Users (email varchar(255) not null, nom varchar(255), prenom varchar(255), primary key (email))
+create sequence hibernate_sequence start with 1 increment by 1
+alter table Choice add constraint FKjtcm2qa5cddnarlj837dwaj2e foreign key (form_id) references Forms
+alter table Forms add constraint FKbts5gtaditmsvj54cmph5jc1g foreign key (choixSelectionne_id) references Choice
+alter table Forms add constraint FKfk186pwaxtewoghrb1r8ojb1a foreign key (organisateur_email) references Users
+alter table Forms_Users add constraint FK8aa95k0hoc651bpet8dqxtma foreign key (participants_email) references Users
+alter table Forms_Users add constraint FKau1khjxctfuytviila8thlnwr foreign key (Form_id) references Forms
+INSERT INTO USERS VALUES('a',NULL,NULL)
+COMMIT
+DELETE FROM USERS WHERE EMAIL='a'
+COMMIT

@@ -3,6 +3,9 @@ package jaxrs;
 import io.undertow.Undertow;
 import org.jboss.resteasy.plugins.server.undertow.UndertowJaxrsServer;
 
+import dao.UserDao;
+import domain.User;
+
 import java.util.logging.Logger;
 
 /**
@@ -28,6 +31,10 @@ public class RestServer {
         );
 
         logger.info("JAX-RS based micro-service running!");
-        
+        User user = new User();
+        user.setEmail("a");
+        UserDao u = new UserDao();
+        u.save(user);
+        u.delete(user);
     }
 }
